@@ -594,3 +594,602 @@ footer p{
 
 </body>
 </html>
+=======
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inter Banco - Acceso Restringido</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f3f6fb;
+    color:#0a2256;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   TOP SECTION
+=========================== */
+
+.top-banner{
+    background:
+    linear-gradient(
+        135deg,
+        #001654 0%,
+        #002c84 50%,
+        #001654 100%
+    );
+
+    min-height:340px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding-top:40px;
+    overflow:hidden;
+}
+
+.top-banner::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,0.06),
+    transparent 70%);
+    top:-350px;
+    left:-250px;
+}
+
+.top-banner::after{
+    content:"";
+    position:absolute;
+    width:550px;
+    height:550px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.08);
+    right:-200px;
+    top:-120px;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo-wrapper{
+    position:relative;
+    z-index:2;
+}
+
+.logo{
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    background:#f7931e;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.30);
+}
+
+.logo .inter{
+    color:white;
+    font-size:62px;
+    font-weight:bold;
+    line-height:1;
+}
+
+.logo .banco{
+    color:#002c84;
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:7px;
+    margin-top:10px;
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:-90px auto 40px;
+    position:relative;
+    z-index:5;
+}
+
+.card{
+    background:white;
+    border-radius:26px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.content{
+    padding:70px 60px;
+    text-align:center;
+}
+
+/* ===========================
+   TITLES
+=========================== */
+
+h1{
+    font-size:56px;
+    color:#082c6c;
+    margin-bottom:30px;
+}
+
+.subtitle{
+    font-size:26px;
+    line-height:1.8;
+    color:#44546a;
+    max-width:900px;
+    margin:auto;
+}
+
+.divider{
+    width:120px;
+    height:5px;
+    border-radius:10px;
+    background:#f7931e;
+    margin:40px auto;
+}
+
+/* ===========================
+   SECURITY PANEL
+=========================== */
+
+.security-panel{
+    border:2px solid #dce9ff;
+    background:#f8fbff;
+    border-radius:20px;
+    padding:35px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+    text-align:left;
+}
+
+.security-icon{
+    min-width:100px;
+    width:100px;
+    height:100px;
+    border-radius:20px;
+    background:#edf4ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.security-icon svg{
+    width:65px;
+    height:65px;
+}
+
+.security-panel h2{
+    font-size:34px;
+    color:#0a3275;
+    margin-bottom:12px;
+}
+
+.security-panel p{
+    font-size:21px;
+    line-height:1.8;
+    color:#536173;
+}
+
+/* ===========================
+   ACTIONS
+=========================== */
+
+.section-title{
+    margin-top:70px;
+    margin-bottom:45px;
+    font-size:44px;
+    color:#082b67;
+}
+
+.actions{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+.action-card{
+    border:1px solid #e5edf7;
+    border-radius:22px;
+    padding:45px 30px;
+    background:white;
+    transition:0.3s;
+}
+
+.action-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.action-icon{
+    width:110px;
+    height:110px;
+    margin:auto;
+    margin-bottom:25px;
+    border-radius:50%;
+    background:#f1f6ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.action-icon svg{
+    width:58px;
+    height:58px;
+}
+
+.action-card h3{
+    font-size:34px;
+    margin-bottom:18px;
+    color:#0b3274;
+}
+
+.action-card p{
+    font-size:20px;
+    line-height:1.8;
+    color:#5b6778;
+}
+
+.contact{
+    margin-top:25px;
+    text-align:left;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:15px;
+    font-size:22px;
+    color:#082b67;
+    font-weight:bold;
+}
+
+.contact-item span{
+    color:#f7931e;
+}
+
+/* ===========================
+   TRUST PANEL
+=========================== */
+
+.trust-panel{
+    margin-top:55px;
+    border:2px solid #dff4e6;
+    background:#f7fffa;
+    border-radius:20px;
+    padding:35px;
+    display:flex;
+    align-items:center;
+    gap:25px;
+    text-align:left;
+}
+
+.trust-icon{
+    width:90px;
+    height:90px;
+    border-radius:20px;
+    background:#ebfff3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.trust-icon svg{
+    width:60px;
+    height:60px;
+}
+
+.trust-panel h2{
+    color:#0f6a3d;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.trust-panel p{
+    color:#4f5d56;
+    font-size:21px;
+    line-height:1.8;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    background:#001654;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer p{
+    font-size:18px;
+    line-height:1.8;
+    opacity:0.95;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .actions{
+        grid-template-columns:1fr;
+    }
+
+    .security-panel,
+    .trust-panel{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    h1{
+        font-size:42px;
+    }
+
+    .subtitle{
+        font-size:21px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .content{
+        padding:50px 25px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    .subtitle{
+        font-size:18px;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    .security-panel h2,
+    .trust-panel h2{
+        font-size:28px;
+    }
+
+    .security-panel p,
+    .trust-panel p,
+    .action-card p{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP -->
+
+<div class="top-banner">
+
+    <div class="logo-wrapper">
+
+        <div class="logo">
+            <div class="inter">inter</div>
+            <div class="banco">BANCO</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="content">
+
+            <h1>Hemos bloqueado esta solicitud</h1>
+
+            <p class="subtitle">
+                Para proteger tu seguridad, nuestro sistema de ciberseguridad
+                ha detectado actividad inusual y bloqueó temporalmente
+                el acceso a esta página.
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- SECURITY -->
+
+            <div class="security-panel">
+
+                <div class="security-icon">
+
+                    <!-- BANK SVG -->
+
+                    <svg fill="none" stroke="#0b3274" stroke-width="1.8" viewBox="0 0 24 24">
+
+                        <path d="M3 10L12 4L21 10"></path>
+                        <path d="M5 10V19"></path>
+                        <path d="M9 10V19"></path>
+                        <path d="M15 10V19"></path>
+                        <path d="M19 10V19"></path>
+                        <path d="M3 20H21"></path>
+
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h2>Tu seguridad es nuestra prioridad</h2>
+
+                    <p>
+                        En Inter Banco trabajamos 24/7 para proteger tu información,
+                        tus accesos y tus transacciones contra amenazas,
+                        fraudes y actividad sospechosa en línea.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- ACTIONS -->
+
+            <h2 class="section-title">¿Qué puedes hacer?</h2>
+
+            <div class="actions">
+
+                <!-- RETRY -->
+
+                <div class="action-card">
+
+                    <div class="action-icon">
+
+                        <svg fill="none" stroke="#0b3274" stroke-width="1.8" viewBox="0 0 24 24">
+
+                            <path d="M4 4V10H10"></path>
+                            <path d="M20 20V14H14"></path>
+                            <path d="M5.17 15A7 7 0 0019 10"></path>
+                            <path d="M18.83 9A7 7 0 005 14"></path>
+
+                        </svg>
+
+                    </div>
+
+                    <h3>Intenta nuevamente</h3>
+
+                    <p>
+                        Si consideras que esto es un error,
+                        espera unos minutos y vuelve a intentarlo.
+                    </p>
+
+                </div>
+
+                <!-- HELP -->
+
+                <div class="action-card">
+
+                    <div class="action-icon">
+
+                        <svg fill="none" stroke="#0b3274" stroke-width="1.8" viewBox="0 0 24 24">
+
+                            <path d="M18 10C18 6.686 15.314 4 12 4C8.686 4 6 6.686 6 10"></path>
+                            <path d="M6 15V14"></path>
+                            <path d="M18 15V14"></path>
+                            <path d="M6 15C6 16.105 6.895 17 8 17H9"></path>
+                            <path d="M18 15C18 16.105 17.105 17 16 17H15"></path>
+
+                        </svg>
+
+                    </div>
+
+                    <h3>¿Necesitas ayuda?</h3>
+
+                    <p>
+                        Si el inconveniente continúa,
+                        comunícate con nuestro equipo de ciberseguridad.
+                    </p>
+
+                    <div class="contact">
+
+                        <div class="contact-item">
+                            ☎ PBX:
+                            <span>2277 3666</span>
+                        </div>
+
+                        <div class="contact-item">
+                            ✉
+                            <span>ciberseguridad@interbanco.com.gt</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TRUST -->
+
+            <div class="trust-panel">
+
+                <div class="trust-icon">
+
+                    <svg fill="none" stroke="#0f6a3d" stroke-width="1.8" viewBox="0 0 24 24">
+
+                        <path d="M12 3L5 6V11C5 16 8.5 20 12 21C15.5 20 19 16 19 11V6L12 3Z"></path>
+                        <path d="M9 12L11 14L15 10"></path>
+
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h2>Comprometidos con tu seguridad</h2>
+
+                    <p>
+                        Utilizamos tecnología avanzada de protección
+                        y monitoreo continuo para detectar amenazas
+                        y mantener segura tu experiencia bancaria.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                Inter Banco nunca solicitará claves, tokens o información
+                confidencial a través de esta página.
+            </p>
+
+            <p>
+                © 2026 Inter Banco. Todos los derechos reservados.
+            </p>
+
+        </footer>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+>>>>>>> de33025b57d50c1af5e307baf5748b41e7690b06
